@@ -70,9 +70,10 @@ THREADS=10
     --port 8080 \
     --threads "$THREADS" \
     --threads-batch "$THREADS" \
-    --ctx-size 4096 \
+    --ctx-size 32768 \
     --batch-size 512 \
     --parallel 1 \
+    --n-predict 20000 \
     > /tmp/llama.log 2>&1 &
 LLAMA_PID=$!
 echo "Waiting for llama-server to load the model..."
